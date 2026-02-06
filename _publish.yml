@@ -1,0 +1,10 @@
+- source: session12.qmd
+  quarto-pub:
+    - id: 133f8b8e-2900-413a-97d3-6f35d9f08db3
+      url: https://min.quarto.pub/session12
+- source: session34.qmd
+  quarto-pub:
+    - id: e82fe98f-346f-408a-8cbb-27161f81b2a0
+      url: https://min.quarto.pub/session34_programming
+- source: session56.qmd
+  quarto-pub: []

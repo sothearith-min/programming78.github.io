@@ -1,0 +1,389 @@
+---
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    transition: fade
+    font-family: 'Trebuchet MS'
+    scrollable: true
+---
+
+<style>
+body {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  color: #2980b9;
+}
+.reveal {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+</style>
+
+<div style="text-align:center; margin-top: 40px; line-height: 1.4;">
+  
+  <img src="https://pelprek.sgp1.digitaloceanspaces.com/banner/3489/148825024520275.png" alt="PPIU Logo" style="width: 400px; margin-bottom: 20px;">
+  
+  <h1 style="font-size: 2.5em; font-weight: 700; color: #2980b9; margin-bottom: 10px;">
+    Session 78 Quiz
+  </h1>
+
+  <h2 style="font-size: 1.5em; font-weight: 500; color: #555;">
+    Operators and Expressions
+  </h2>
+
+  <div style="border-bottom: 4px solid #e74c3c; width: 45%; margin: 18px auto;"></div>
+  <h3 style="margin-top: 25px; font-weight: 700; color: #050E3C">10 Questions</h3>
+  <h4 style="font-weight: 700; color: #666;">Phnom Penh International University</h4>
+
+</div>
+
+## How to Play 📝
+
+- One question per slide
+- Think of your answer before moving to the next slide
+- Answers are at the end!
+- Topics: arithmetic, relational, logical operators, precedence
+
+::: {.callout-tip}
+**⏱️** Take your time. No peeking at the answers!
+:::
+
+---
+
+## Question 1
+
+**What is the result of `10 / 3` in Python?**
+
+**A)** 3  
+**B)** 3.333...  
+**C)** 3.0  
+**D)** Error
+
+::: {.callout-note}
+Think about the difference between `/` and `//`.
+:::
+
+---
+
+## Question 2
+
+**What does `10 % 3` return?**
+
+**A)** 3.333...  
+**B)** 3  
+**C)** 1  
+**D)** 0
+
+::: {.callout-note}
+The modulo operator `%` returns the remainder after division.
+:::
+
+---
+
+## Question 3
+
+**What is the result of `2 ** 3`?**
+
+**A)** 6  
+**B)** 8  
+**C)** 5  
+**D)** 9
+
+::: {.callout-note}
+`**` is the exponent (power) operator.
+:::
+
+---
+
+## Question 4
+
+**What does this expression evaluate to?**
+
+```python
+5 == 5 and 3 < 5
+```
+
+**A)** True  
+**B)** False  
+**C)** Error  
+**D)** "True"
+
+::: {.callout-note}
+Both conditions must be true for `and` to return true.
+:::
+
+---
+
+## Question 5
+
+**Which expression is True?**
+
+**A)** `5 > 10 or 3 > 8`  
+**B)** `5 < 10 and 3 < 8`  
+**C)** `not (5 > 10)`  
+**D)** Both B and C
+
+::: {.callout-note}
+For `or`, at least one must be true. For `not`, it reverses.
+:::
+
+---
+
+## Question 6
+
+**What is the result of `2 + 3 * 4`?**
+
+**A)** 20  
+**B)** 14  
+**C)** 18  
+**D)** 24
+
+::: {.callout-note}
+Remember operator precedence: multiplication before addition.
+:::
+
+---
+
+## Question 7
+
+**What does `(2 + 3) * 4` equal?**
+
+**A)** 14  
+**B)** 20  
+**C)** 12  
+**D)** 24
+
+::: {.callout-note}
+Parentheses override the normal precedence order.
+:::
+
+---
+
+## Question 8
+
+**What is the result of `not True`?**
+
+**A)** True  
+**B)** False  
+**C)** 1  
+**D)** 0
+
+::: {.callout-note}
+`not` reverses the boolean value.
+:::
+
+---
+
+## Question 9
+
+**Which statement is correct?**
+
+**A)** `3 != 3` is True  
+**B)** `3 != 5` is True  
+**C)** `3 == 5` is True  
+**D)** `3 > 3` is True
+
+::: {.callout-note}
+`!=` means "not equal to".
+:::
+
+---
+
+## Question 10
+
+**What is the result of `10 // 3 * 2 + 1`?**
+
+**A)** 5  
+**B)** 6  
+**C)** 7  
+**D)** 8
+
+::: {.callout-note}
+Follow operator precedence: `//, *` (left to right), then `+`.
+:::
+
+---
+
+# Answers
+
+---
+
+## Answer 1
+
+**What is the result of `10 / 3` in Python?**
+
+**Answer: B) 3.333...**
+
+The `/` operator always returns a float (decimal number), even if you're dividing whole numbers.
+
+```python
+print(10 / 3)   # 3.3333...
+print(type(10 / 3))  # <class 'float'>
+```
+
+If you wanted `3`, you'd use `//`: `10 // 3` = `3`
+
+---
+
+## Answer 2
+
+**What does `10 % 3` return?**
+
+**Answer: C) 1**
+
+Modulo (`%`) returns the remainder: 10 = 3 × 3 + **1**
+
+```python
+print(10 % 3)   # 1
+print(17 % 5)   # 2
+print(20 % 4)   # 0
+```
+
+Useful for: checking even/odd, cycling patterns, etc.
+
+---
+
+## Answer 3
+
+**What is the result of `2 ** 3`?**
+
+**Answer: B) 8**
+
+The exponent operator `**` raises to a power: 2³ = 2 × 2 × 2 = **8**
+
+```python
+print(2 ** 3)   # 8
+print(3 ** 2)   # 9
+print(10 ** 2)  # 100
+```
+
+---
+
+## Answer 4
+
+**What does this expression evaluate to?**
+
+```python
+5 == 5 and 3 < 5
+```
+
+**Answer: A) True**
+
+- `5 == 5` → True
+- `3 < 5` → True
+- `True and True` → **True**
+
+With `and`, BOTH conditions must be True.
+
+---
+
+## Answer 5
+
+**Which expression is True?**
+
+**Answer: D) Both B and C**
+
+**B)** `5 < 10 and 3 < 8` → True and True → **True**  
+**C)** `not (5 > 10)` → not False → **True**
+
+**A)** `5 > 10 or 3 > 8` → False or False → False ❌
+
+---
+
+## Answer 6
+
+**What is the result of `2 + 3 * 4`?**
+
+**Answer: B) 14**
+
+Operator precedence: multiplication before addition!
+
+```
+2 + 3 * 4
+= 2 + 12    (multiply first: 3 * 4)
+= 14        (then add)
+```
+
+If you wanted 20, you'd write: `(2 + 3) * 4`
+
+---
+
+## Answer 7
+
+**What does `(2 + 3) * 4` equal?**
+
+**Answer: B) 20**
+
+Parentheses have the highest priority!
+
+```
+(2 + 3) * 4
+= 5 * 4     (add first: 2 + 3)
+= 20        (then multiply)
+```
+
+This is different from `2 + 3 * 4` which equals 14.
+
+---
+
+## Answer 8
+
+**What is the result of `not True`?**
+
+**Answer: B) False**
+
+The `not` operator reverses boolean values:
+
+```python
+print(not True)      # False
+print(not False)     # True
+```
+
+Think of it as "opposite of".
+
+---
+
+## Answer 9
+
+**Which statement is correct?**
+
+**Answer: B) `3 != 5` is True**
+
+- `3 != 5` means "3 is NOT equal to 5" → **True** ✅
+- `3 != 3` → False (they ARE equal)
+- `3 == 5` → False (they are NOT equal)
+- `3 > 3` → False (they are equal, not greater)
+
+---
+
+## Answer 10
+
+**What is the result of `10 // 3 * 2 + 1`?**
+
+**Answer: D) 8**
+
+Follow precedence: `//` and `*` (left to right), then `+`
+
+```
+10 // 3 * 2 + 1
+= 3 * 2 + 1      (10 // 3 = 3)
+= 6 + 1          (3 * 2 = 6)
+= 7              (6 + 1 = 7)
+```
+
+Wait! Let me recalculate: 6 + 1 = 7, not 8. **Corrected Answer: C) 7**
+
+---
+
+## Great Job! 🎉
+
+**You've completed the Session 78 Quiz!**
+
+Topics covered:
+- ✅ Arithmetic operators
+- ✅ Relational operators
+- ✅ Logical operators
+- ✅ Operator precedence
+
+**Keep practicing and master the operators!** 💪

@@ -1,0 +1,647 @@
+---
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    transition: fade
+    font-family: 'Trebuchet MS'
+    scrollable: true
+---
+
+<style>
+body {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  color: #2980b9;
+}
+.reveal {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+</style>
+
+<div style="text-align:center; margin-top: 40px; line-height: 1.4;">
+  
+  <img src="https://pelprek.sgp1.digitaloceanspaces.com/banner/3489/148825024520275.png" alt="PPIU Logo" style="width: 400px; margin-bottom: 20px;">
+  
+  <h1 style="font-size: 3em; font-weight: 700; color: #2980b9; margin-bottom: 10px;">
+    Programming Language I
+  </h1>
+
+  <h2 style="font-size: 1.6em; font-weight: 500; color: #555;">
+    Operators and Expressions
+  </h2>
+
+  <div style="border-bottom: 4px solid #e74c3c; width: 45%; margin: 18px auto;"></div>
+<h3 style="margin-top: 25px; font-weight: 700; color: #050E3C">
+  By: MIN Sothearith
+</h3>
+
+<h4 style="font-weight: 700; color: #666;">
+  Phnom Penh International University
+</h4>
+
+</div>
+
+## Welcome Back! 🎉
+
+<div style="text-align:center; margin-top: 40px;">
+  <h3 style="color: #2980b9;">Making Calculations and Decisions</h3>
+  
+  <p style="font-size: 1.4em; margin-top: 50px;">
+    Today we learn <strong>operators</strong>, <strong>expressions</strong>, and how to build logic! 🚀
+  </p>
+</div>
+
+::: {.callout-note}
+## 💡 Why It Matters
+Operators are the tools that let your program perform calculations, make comparisons, and build logical decisions!
+:::
+
+## Today's Plan
+
+**Operators and Expressions:**
+
+1. **Arithmetic Operators** — `+`, `-`, `*`, `/`, `//`, `%`, `**`
+2. **Relational Operators** — `==`, `!=`, `<`, `>`, `<=`, `>=`
+3. **Logical Operators** — `and`, `or`, `not`
+4. **Operator Precedence** — Which calculations happen first?
+
+::: {.callout-tip}
+**⏱️ Time:** ~90 minutes | **📝 Goal:** Master operators and write smart expressions!
+:::
+
+## Learning Objectives
+
+**By the end of this class, you will:**
+
+- Use arithmetic operators for calculations
+- Use relational operators to compare values
+- Use logical operators to combine conditions
+- Understand operator precedence and write correct expressions
+- Evaluate complex expressions step-by-step
+
+::: {.callout-important}
+## 🎯 Hands-On Learning
+You'll write code that calculates, compares, and makes decisions!
+:::
+
+---
+
+# Part 1: Arithmetic Operators
+
+## What are Operators?
+
+::: {style="text-align:center; margin-top: 40px;"}
+### An **operator** is a symbol that performs an action on values {style="color: #2980b9; font-size: 1.5em;"}
+
+Like the buttons on a calculator — each does something specific.
+:::
+
+**Example:**
+```python
+result = 10 + 5   # + is the operator
+print(result)     # 15
+```
+
+::: {.callout-tip}
+## 💡 Think of it as
+**Operands** → the values being operated on (10 and 5)  
+**Operator** → the action (+)
+:::
+
+## The Seven Arithmetic Operators
+
+| Operator | Name | Example | Result |
+|----------|------|---------|--------|
+| `+` | Addition | `10 + 3` | 13 |
+| `-` | Subtraction | `10 - 3` | 7 |
+| `*` | Multiplication | `10 * 3` | 30 |
+| `/` | Division | `10 / 3` | 3.333... |
+| `//` | Integer Division | `10 // 3` | 3 |
+| `%` | Modulo (Remainder) | `10 % 3` | 1 |
+| `**` | Exponent (Power) | `10 ** 3` | 1000 |
+
+::: {.callout-tip}
+## 💡 Division types
+`/` gives decimals, `//` gives whole numbers
+:::
+
+## Addition and Subtraction
+
+Simple and straightforward:
+
+```python
+x = 20
+y = 8
+
+sum_result = x + y
+print(sum_result)        # 28
+
+difference = x - y
+print(difference)        # 12
+
+# Can also use with variables
+total = 100 - 25 + 10
+print(total)             # 85
+```
+
+::: {.callout-note}
+## 🔢 Math works as expected
+Left to right for same priority operators.
+:::
+
+## Multiplication and Division
+
+```python
+# Multiplication
+price = 12.50
+quantity = 4
+total_cost = price * quantity
+print(total_cost)        # 50.0
+
+# Division (always gives float)
+distance = 100
+time = 3
+speed = distance / time
+print(speed)             # 33.333...
+print(type(speed))       # <class 'float'>
+```
+
+::: {.callout-warning}
+## ⚠️ Division always returns float
+Even `10 / 2` gives `5.0`, not `5`
+:::
+
+## Integer Division (//)
+
+Use `//` when you want a whole number result:
+
+```python
+# Regular division
+print(10 / 3)            # 3.3333...
+
+# Integer division (floor division)
+print(10 // 3)           # 3
+
+# Useful for counting groups
+eggs = 17
+dozen = eggs // 12
+print(dozen)             # 1 (one complete dozen)
+```
+
+::: {.callout-tip}
+## 💡 Floor division
+It rounds DOWN to the nearest integer.
+:::
+
+## Modulo Operator (%)
+
+**Modulo** gives you the **remainder** after division:
+
+```python
+# What's left over?
+print(10 % 3)            # 1 (10 = 3*3 + 1)
+print(17 % 5)            # 2 (17 = 5*3 + 2)
+print(20 % 4)            # 0 (evenly divisible)
+
+# Check even/odd using boolean expressions (no `if` yet)
+number = 15
+print(number % 2 == 0)   # False -> not even
+print(number % 2 != 0)   # True  -> odd
+print(f"Is {number} even? {number % 2 == 0}")
+```
+
+::: {.callout-note}
+## 🎯 Useful for
+- Checking if divisible (remainder == 0)
+- Finding even/odd numbers
+- Cycling through a range
+:::
+
+## Exponent Operator (**)
+
+**Raise a number to a power:**
+
+```python
+# Square and cube
+base = 2
+print(base ** 2)         # 4 (2 squared)
+print(base ** 3)         # 8 (2 cubed)
+
+# Powers of 10
+print(10 ** 2)           # 100
+print(10 ** 3)           # 1000
+
+# Fractional powers (roots)
+print(16 ** 0.5)         # 4.0 (square root)
+print(27 ** (1/3))       # 3.0 (cube root)
+```
+
+::: {.callout-tip}
+## 💡 Power notation
+`2 ** 3` means "2 to the power of 3" = 2 × 2 × 2
+:::
+
+---
+
+# Part 2: Relational Operators
+
+## Comparing Values
+
+::: {style="text-align:center; margin-top: 40px;"}
+### **Relational operators** compare two values and return `True` or `False` {style="color: #2980b9; font-size: 1.5em;"}
+
+Like asking a yes/no question about two numbers.
+:::
+
+**Example:**
+```python
+age = 18
+print(age > 17)   # True
+print(age < 18)   # False
+```
+
+## The Six Relational Operators
+
+| Operator | Meaning | Example | Result |
+|----------|---------|---------|--------|
+| `==` | Equal to | `5 == 5` | True |
+| `!=` | Not equal to | `5 != 3` | True |
+| `<` | Less than | `3 < 5` | True |
+| `>` | Greater than | `5 > 3` | True |
+| `<=` | Less than or equal | `5 <= 5` | True |
+| `>=` | Greater than or equal | `5 >= 5` | True |
+
+::: {.callout-warning}
+## ⚠️ Comparison vs Assignment
+- `==` (equals) — compares two values
+- `=` (single) — assigns a value to a variable
+:::
+
+## Equal and Not Equal
+
+```python
+# Check if values are the same
+x = 10
+y = 10
+print(x == y)            # True
+print(x == 5)            # False
+
+# Check if values are different
+print(x != y)            # False
+print(x != 5)            # True
+
+# Works with strings too
+name = "Sok"
+print(name == "Sok")     # True
+print(name == "Anna")    # False
+```
+
+::: {.callout-note}
+## 💡 Careful with types
+`"10" == 10` is `False` (string vs number)
+:::
+
+## Less Than and Greater Than
+
+```python
+score = 75
+
+print(score < 80)        # True
+print(score > 80)        # False
+print(score > 50)        # True
+
+# Practical example: checking grades using comparisons (no `if` yet)
+print("Score >= 90 -> A?", score > 90)
+print("Score > 80 and <= 90 -> B?", score > 80 and score <= 90)
+print("Score > 50 -> Passing?", score > 50)
+```
+
+::: {.callout-tip}
+## 💡 Directional thinking
+`3 < 5` means "3 is less than 5" ✅
+:::
+
+## Less Than or Equal / Greater Than or Equal
+
+```python
+age = 18
+
+print(age >= 18)         # True (18 is >= 18)
+print(age <= 21)         # True
+print(age <= 17)         # False
+
+# Practical: age restrictions using comparisons
+print("Adult?", age >= 18)
+print("Minor?", age < 18)
+```
+
+::: {.callout-note}
+## 🔄 Includes the boundary
+`<=` includes the equal value
+:::
+
+---
+
+# Part 3: Logical Operators
+
+## Combining Conditions
+
+::: {style="text-align:center; margin-top: 40px;"}
+### **Logical operators** combine conditions to create complex decisions {style="color: #2980b9; font-size: 1.5em;"}
+
+Ask multiple yes/no questions at once.
+:::
+
+**Example:**
+```python
+age = 20
+has_license = True
+# Evaluate the boolean expression directly
+print("Can drive?", age >= 18 and has_license)
+```
+
+## The Three Logical Operators
+
+| Operator | Meaning | Example | Result |
+|----------|---------|---------|--------|
+| `and` | Both must be True | `True and True` | True |
+| `or` | At least one True | `True or False` | True |
+| `not` | Reverses True/False | `not False` | True |
+
+::: {.callout-tip}
+## 💡 Think naturally
+"AND" = both true  
+"OR" = at least one true  
+"NOT" = opposite
+:::
+
+## The `and` Operator
+
+**Both conditions must be True:**
+
+```python
+age = 20
+has_money = True
+
+# Both must be True (evaluate directly)
+print(age >= 18 and has_money)       # True
+
+# One is False (evaluate directly)
+print(age >= 18 and has_money == False)  # False
+
+# Truth table
+print(True and True)       # True
+print(True and False)      # False
+print(False and False)     # False
+```
+
+::: {.callout-note}
+## 🎯 Common use
+Check multiple conditions that must all be satisfied
+:::
+
+## The `or` Operator
+
+**At least one condition must be True:**
+
+```python
+day = "Saturday"
+is_holiday = False
+
+# Evaluate the boolean expression directly
+print(day == "Saturday" or is_holiday)  # True
+
+# Truth table
+print(True or False)       # True
+print(False or False)      # False
+print(True or True)        # True
+```
+
+::: {.callout-tip}
+## 💡 Inclusive
+Only False when BOTH are False
+:::
+
+## The `not` Operator
+
+**Reverses True to False and vice versa:**
+
+```python
+is_raining = False
+
+# Using not (evaluate directly)
+print(not is_raining)    # True
+
+# Equivalent ways
+print(is_raining == False)  # True
+
+# With variables
+is_adult = False
+print(not is_adult)     # True
+```
+
+::: {.callout-note}
+## 🔄 Simple negation
+`not True` → `False`  
+`not False` → `True`
+:::
+
+## Combining Multiple Operators
+
+You can chain multiple logical operators:
+
+```python
+age = 16
+has_money = True
+has_permission = True
+
+# All three must be true (evaluate directly)
+print(age >= 18 and has_money and has_permission)  # False
+
+# Complex condition (evaluate directly)
+print((age >= 16 and has_money) or has_permission)  # True
+```
+
+::: {.callout-tip}
+## 💡 Use parentheses
+Make your logic clear: `(a and b) or c`
+:::
+
+---
+
+# Part 4: Operator Precedence
+
+
+## Precedence Order (High to Low)
+
+From **highest** (done first) to **lowest** (done last):
+
+| Precedence | Operators | Examples |
+|------------|-----------|----------|
+| **1 (Highest)** | `**` | Exponent |
+| **2** | `+x`, `-x`, `not` | Unary operators |
+| **3** | `*`, `/`, `//`, `%` | Multiplication, division |
+| **4** | `+`, `-` | Addition, subtraction |
+| **5** | `==`, `!=`, `<`, `>`, `<=`, `>=` | Relational |
+| **6** | `and` | Logical AND |
+| **7 (Lowest)** | `or` | Logical OR |
+
+::: {.callout-important}
+## 🎯 Key Order
+1. `**` (exponent) — always first
+2. `*`, `/`, `//`, `%` (multiply/divide)
+3. `+`, `-` (add/subtract)
+4. Comparisons
+5. `and`
+6. `or`
+:::
+
+## Example: Arithmetic Precedence
+
+```python
+# Example 1: Multiplication before addition
+result1 = 2 + 3 * 4
+# → 2 + 12 = 14 ✅
+print(result1)             # 14
+
+# Example 2: Exponent before multiplication
+result2 = 2 * 3 ** 2
+# → 2 * 9 = 18 ✅
+print(result2)             # 18
+
+# Example 3: Left to right for same priority
+result3 = 20 - 5 - 3
+# → 15 - 3 = 12 ✅
+print(result3)             # 12
+```
+
+::: {.callout-warning}
+## ⚠️ Same priority = left to right
+`20 - 5 - 3` is `(20 - 5) - 3`, not `20 - (5 - 3)`
+:::
+
+## Using Parentheses to Override
+
+**Parentheses have the HIGHEST priority:**
+
+```python
+# Without parentheses: multiply first
+result1 = 2 + 3 * 4
+print(result1)             # 14 (not 20)
+
+# With parentheses: add first
+result2 = (2 + 3) * 4
+print(result2)             # 20
+
+# Complex example
+result3 = (10 - 2) * (3 + 1)
+# → 8 * 4 = 32
+print(result3)             # 32
+```
+
+::: {.callout-tip}
+## 💡 When in doubt, use parentheses!
+It makes your code clearer and prevents mistakes.
+:::
+
+## Example: Mixed Operators
+
+```python
+# Arithmetic and relational
+age = 20
+print(age > 18 and age < 65)  # True
+
+# Breaking it down:
+# 1. age > 18  → True
+# 2. age < 65  → True
+# 3. True and True → True
+
+# Another example with arithmetic
+score = 85
+print(score // 10 == 8)        # True
+# 1. 85 // 10 = 8
+# 2. 8 == 8 → True
+```
+
+::: {.callout-note}
+## 🔍 Trace through carefully
+Evaluate step-by-step following precedence rules
+:::
+
+## Math: Using the `math` module and operators
+
+Display the function clearly using mathematical notation:
+
+$$f(x) = \sqrt{x^3 + 2\pi x} + (\pi x^2)^{1/3}$$
+
+```python
+import math
+
+# Set x (students can change this value)
+x = 2.5
+
+# Example expression using operators and math functions (same as above):
+f = math.sqrt(x**3 + 2 * math.pi * x) + (math.pi * x**2) ** (1/3)
+
+print(f"f({x}) = {f:.6f}")
+
+# Show intermediate parts to reinforce operator order
+part1 = x**3
+part2 = 2 * math.pi * x
+print("part1 (x**3):", part1)
+print("part2 (2*pi*x):", part2)
+print("sqrt(part1 + part2):", math.sqrt(part1 + part2))
+```
+
+## Challenge (your task)
+
+Write a short program that:
+
+- Sets a value for `x` (students may change this value),
+- Calculates the harder function
+
+$$
+g(x) = \frac{\left(\sqrt{x^3 + 2\pi x} + (\pi x^2)^{1/3}\right)^2}{e^{x/10}} + \sin(x)
+$$
+
+- Prints the result rounded to **4** decimal places (e.g., use `f"{value:.4f}"`).
+
+**Hints:**
+- Use `import math` to access `math.pi`, `math.sqrt`, `math.exp`, and `math.sin` 🔧
+- Use `**` for powers and parentheses to control order of operations 🧮
+- Compute intermediate parts (e.g., the numerator and the exponent) and print them to check your work
+
+::: {.callout-tip}
+## 💡 Real-world logic
+This challenge combines multiple operators and functions so students practice order of operations and using the `math` module.
+:::
+
+---
+
+## Summary: Operators and Expressions
+
+**What you've learned:**
+
+1. **Arithmetic:** `+`, `-`, `*`, `/`, `//`, `%`, `**` for calculations
+2. **Relational:** `==`, `!=`, `<`, `>`, `<=`, `>=` for comparisons
+3. **Logical:** `and`, `or`, `not` for complex decisions
+4. **Precedence:** The order operators are evaluated (can use parentheses!)
+
+::: {.callout-important}
+## 🎯 Key Takeaways
+- Use arithmetic operators to calculate
+- Use relational operators to compare
+- Use logical operators to combine conditions
+- Remember precedence: ** → */÷ → +- → comparisons → and → or
+- Use parentheses to be clear!
+:::
+
+## Next Class
+
+Next class we will learn about `if` statements to make decisions using these operators.
+
+::: {.callout-tip}
+**Get ready to build smart programs that make choices!** 🚀
+:::
